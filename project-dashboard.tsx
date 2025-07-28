@@ -32,12 +32,12 @@ export default function Component() {
       id: 1,
       name: "Engine Fiscal",
       progress: 100,
-      status: "pilot",
+      status: "completed",
       startDate: "01/04/2025",
       endDate: "30/06/2025",
       color: "bg-blue-500",
       showInTimeline: 3, 
-      category: "Fiscal",
+      category: "Engine",
     },
     {
       id: 2,
@@ -47,16 +47,16 @@ export default function Component() {
       startDate: "01/04/2025",
       endDate: "27/06/2025",
       color: "bg-cyan-500",
-      showInTimeline: 1, 
+      showInTimeline: 3, 
       category: "Cartões",
     },
     {
       id: 3,
       name: "Cartões Limites",
-      progress: 0,
+      progress: 50,
       status: "active",
-      startDate: "30/06/2025",
-      endDate: "08/08/2025",
+      startDate: "22/07/2025",
+      endDate: "29/08/2025",
       color: "bg-blue-600",
       showInTimeline: 1,
       category: "Cartões",
@@ -64,7 +64,7 @@ export default function Component() {
     {
       id: 4,
       name: "Cartões Blacklist",
-      progress: 85,
+      progress: 90,
       status: "active",
       startDate: "30/06/2025",
       endDate: "08/08/2025",
@@ -75,9 +75,9 @@ export default function Component() {
     {
       id: 5,
       name: "Cartões Pré aprovados",
-      progress: 0,
+      progress: 30,
       status: "active",
-      startDate: "11/08/2025",
+      startDate: "22/07/2025",
       endDate: "29/08/2025",
       color: "bg-indigo-500",
       showInTimeline: 1, 
@@ -85,7 +85,7 @@ export default function Component() {
     },
     {
       id: 6,
-      name: "Pacote melhorias conciliação",
+      name: "Pacote 1 de melhorias conciliação",
       progress: 100,
       status: "completed",
       startDate: "08/04/2025",
@@ -97,7 +97,7 @@ export default function Component() {
     {
       id: 7,
       name: "Senhas Automáticas",
-      progress: 75,
+      progress: 100,
       status: "test",
       startDate: "08/04/2025",
       endDate: "30/06/2025",
@@ -124,7 +124,7 @@ export default function Component() {
       startDate: "02/05/2025",
       endDate: "16/07/2025",
       color: "bg-cyan-700",
-      showInTimeline: 1,
+      showInTimeline: 3,
       category: "VAR",
     },
     {
@@ -141,7 +141,7 @@ export default function Component() {
     {
       id: 11,
       name: "Automação de testes",
-      progress: 40,
+      progress: 67,
       status: "active",
       startDate: "23/06/2025",
       endDate: "04/08/2025",
@@ -152,7 +152,7 @@ export default function Component() {
     {
       id: 12,
       name: "Tesouraria",
-      progress: 60,
+      progress: 80,
       status: "active",
       startDate: "01/07/2025",
       endDate: "13/08/2025",
@@ -163,7 +163,7 @@ export default function Component() {
     {
       id: 13,
       name: "MFA",
-      progress: 42,
+      progress: 57,
       status: "active",
       startDate: "01/07/2025",
       endDate: "19/09/2025",
@@ -175,39 +175,54 @@ export default function Component() {
       id: 16,
       name: "API CAV",
       progress: 100,
-      status: "test",
+      status: "completed",
       startDate: "01/06/2025",
       endDate: "27/06/2025",
       color: "bg-blue-800",
       showInTimeline: 3,
       category: "VAR",
     },
-        {
+    {
       id: 17,
       name: "Sabadão Mobile",
-      progress: 0,
+      progress: 82,
       status: "active",
       startDate: "21/07/2025",
-      endDate: "04/08/2025",
+      endDate: "08/08/2025",
       color: "bg-blue-800",
       showInTimeline: 1,
       category: "VAR",
     },
+    {
+      id: 18,
+      name: "Impressora Bluetooth",
+      progress: 100,
+      status: "completed",
+      startDate: "10/07/2025",
+      endDate: "15/08/2025",
+      color: "bg-blue-800",
+      showInTimeline: 3,
+      category: "VAR",
+    },
+    {
+      id: 1,
+      name: "Devolução - Engine Fiscal",
+      progress: 75,
+      status: "active",
+      startDate: "15/07/2025",
+      endDate: "01/08/2025",
+      color: "bg-blue-500",
+      showInTimeline: 3, 
+      category: "Engine",
+    },
   ]
 
   const advances = [
-    "Piloto da Engine com erros reduzidos",
-    "Blacklist em fase final de desenvolvimento e prontos para inicar Manutenção de Limites",
-    "Melhoria no desempenho na conciliação",
-    "Automação dos Testes da Venda Mercantil pronta para ser usada pela primeira vez"
+    "Engine funcionando em quase 200 lojas",
   ]
 
   const attentionPoints = [
-    "Problemas pontuais surgindo no Piloto da Engine",
-    "Problemas com a Migrate",
-    "Conciliação lenta e reprocessamento travado",
-    "Versionamento do InVoicy na Engine",
-    "Risco de atraso na Automação de Testes"
+    
   ]
 
   const futureOpportunities = [
@@ -229,8 +244,19 @@ export default function Component() {
   ]
 
 
+  const sortedProjects = projects.sort((a, b) => {
+    const categoryCompare = a.category.localeCompare(b.category);
+    if (categoryCompare !== 0) return categoryCompare;
+
+    const [da, ma, ya] = a.startDate.split("/").map(Number);
+    const [db, mb, yb] = b.startDate.split("/").map(Number);
+
+    return ya - yb || ma - mb || da - db;
+  });
+
+
   //  projetos para o cronograma (showInTimeline: 1 ou 2)
-  const timelineProjects = projects.filter((project) => project.showInTimeline === 1 || project.showInTimeline === 2)
+  const timelineProjects = sortedProjects.filter((project) => project.showInTimeline === 1 || project.showInTimeline === 2)
 
   //  projetos para a lista (showInTimeline: 1 ou 3) 
   const projectsInProgress = projects.filter(
@@ -315,6 +341,9 @@ export default function Component() {
 
   const calculateTodayPosition = () => {
     const today = new Date()
+    //transformando em sexta 15/07
+    today.setDate(today.getDate() - 3);
+
     const { ganttStart, ganttEnd } = calculateGanttRange()
 
     const totalDays = (ganttEnd.getTime() - ganttStart.getTime()) / (1000 * 60 * 60 * 24)
