@@ -4,83 +4,109 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Calendar, Clock, TrendingUp, AlertTriangle, Lightbulb } from "lucide-react"
+import { Calendar, Clock, TrendingUp, AlertTriangle, Lightbulb, ChevronDown, CheckCircle } from "lucide-react"
+import { useState } from "react"
 
 export default function Component() {
+  // Estados para controlar as sanfonas
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({})
+  const [openCompletedSections, setOpenCompletedSections] = useState<Record<string, boolean>>({})
+
+  const toggleSection = (category: string, isCompleted = false) => {
+    if (isCompleted) {
+      setOpenCompletedSections((prev) => ({
+        ...prev,
+        [category]: !prev[category],
+      }))
+    } else {
+      setOpenSections((prev) => ({
+        ...prev,
+        [category]: !prev[category],
+      }))
+    }
+  }
+
   // showInTimeline: 1 = aparece em ambos, 2 = só no cronograma, 3 = só em projetos em andamento
   const projects = [
     {
       id: 1,
       name: "Engine Fiscal",
       progress: 100,
-      status: "pilot",
+      status: "completed",
       startDate: "01/04/2025",
       endDate: "30/06/2025",
       color: "bg-blue-500",
       showInTimeline: 3, 
+      category: "Engine",
     },
     {
-      id: 3,
+      id: 2,
       name: "Cartões Normalizados",
       progress: 100,
       status: "completed",
       startDate: "01/04/2025",
       endDate: "27/06/2025",
       color: "bg-cyan-500",
-      showInTimeline: 2, 
+      showInTimeline: 3, 
+      category: "Cartões",
+    },
+    {
+      id: 3,
+      name: "Cartões Limites",
+      progress: 60,
+      status: "active",
+      startDate: "22/07/2025",
+      endDate: "29/08/2025",
+      color: "bg-blue-600",
+      showInTimeline: 1,
+      category: "Cartões",
     },
     {
       id: 4,
-      name: "Cartões Limites",
-      progress: 0,
-      status: "active",
-      startDate: "30/06/2025",
-      endDate: "08/08/2025",
-      color: "bg-blue-600",
-      showInTimeline: 2,
-    },
-    {
-      id: 5,
       name: "Cartões Blacklist",
-      progress: 85,
+      progress: 90,
       status: "active",
       startDate: "30/06/2025",
       endDate: "08/08/2025",
       color: "bg-blue-700",
-      showInTimeline: 2,
+      showInTimeline: 1,
+      category: "Cartões",
+    },
+    {
+      id: 5,
+      name: "Cartões Pré aprovados",
+      progress: 50,
+      status: "active",
+      startDate: "22/07/2025",
+      endDate: "29/08/2025",
+      color: "bg-indigo-500",
+      showInTimeline: 1, 
+      category: "Cartões",
     },
     {
       id: 6,
-      name: "Cartões Pré aprovados",
-      progress: 0,
-      status: "active",
-      startDate: "11/08/2025",
-      endDate: "29/08/2025",
-      color: "bg-indigo-500",
-      showInTimeline: 2, 
-    },
-    {
-      id: 7,
-      name: "Melhorias conciliação",
+      name: "Pacote 1 de melhorias conciliação",
       progress: 100,
       status: "completed",
       startDate: "08/04/2025",
-      endDate: "30/06/2025",
+      endDate: "17/07/2025",
       color: "bg-cyan-600",
       showInTimeline: 3, 
+      category: "Conciliação",
     },
     {
-      id: 8,
+      id: 7,
       name: "Senhas Automáticas",
-      progress: 75,
+      progress: 100,
       status: "test",
       startDate: "08/04/2025",
       endDate: "30/06/2025",
       color: "bg-cyan-600",
       showInTimeline: 3,
+      category: "Financeiro",
     },
     {
-      id: 9,
+      id: 8,
       name: "Termo automático",
       progress: 100,
       status: "test",
@@ -88,101 +114,192 @@ export default function Component() {
       endDate: "13/06/2025",
       color: "bg-blue-400",
       showInTimeline: 3,
+      category: "Financeiro",
     },
     {
-      id: 10,
+      id: 9,
       name: "VAR OFF",
       progress: 100,
-      status: "done",
+      status: "completed",
       startDate: "02/05/2025",
       endDate: "16/07/2025",
       color: "bg-cyan-700",
-      showInTimeline: 1,
+      showInTimeline: 3,
+      category: "VAR",
     },
     {
-      id: 11,
+      id: 10,
       name: "VAR Mobile",
       progress: 100,
-      status: "done",
+      status: "completed",
       startDate: "20/04/2025",
       endDate: "23/06/2025",
       color: "bg-blue-800",
       showInTimeline: 3, 
+      category: "VAR",
     },
     {
-      id: 12,
+      id: 11,
       name: "Automação de testes",
-      progress: 40,
+      progress: 77,
       status: "active",
       startDate: "23/06/2025",
       endDate: "04/08/2025",
       color: "bg-blue-800",
       showInTimeline: 1, 
+      category: "Automação",
     },
     {
-      id: 13,
+      id: 12,
       name: "Tesouraria",
-      progress: 60,
+      progress: 80,
       status: "active",
       startDate: "01/07/2025",
       endDate: "13/08/2025",
       color: "bg-blue-800",
       showInTimeline: 1, 
+      category: "Tesouraria",
     },
     {
-      id: 14,
+      id: 13,
       name: "MFA",
-      progress: 40,
+      progress: 64,
       status: "active",
       startDate: "01/07/2025",
       endDate: "19/09/2025",
       color: "bg-blue-800",
       showInTimeline: 1, 
-    },
-    {
-      id: 15,
-      name: "Cartões",
-      progress: 46,
-      status: "active",
-      startDate: "01/07/2025",
-      endDate: "19/09/2025",
-      color: "bg-blue-800",
-      showInTimeline: 3,
+      category: "MFA",
     },
     {
       id: 16,
       name: "API CAV",
       progress: 100,
-      status: "test",
-      startDate: "01/07/2025",
-      endDate: "19/09/2025",
+      status: "completed",
+      startDate: "01/06/2025",
+      endDate: "27/06/2025",
       color: "bg-blue-800",
       showInTimeline: 3,
+      category: "VAR",
     },
-        {
+    {
       id: 17,
       name: "Sabadão Mobile",
-      progress: 0,
+      progress: 100,
       status: "test",
       startDate: "21/07/2025",
-      endDate: "04/08/2025",
+      endDate: "08/08/2025",
       color: "bg-blue-800",
       showInTimeline: 1,
+      category: "VAR",
+    },
+    {
+      id: 18,
+      name: "Impressora Bluetooth",
+      progress: 100,
+      status: "completed",
+      startDate: "10/07/2025",
+      endDate: "15/08/2025",
+      color: "bg-blue-800",
+      showInTimeline: 3,
+      category: "VAR",
+    },
+    {
+      id: 19,
+      name: "Devolução - Engine Fiscal",
+      progress: 100,
+      status: "test",
+      startDate: "15/07/2025",
+      endDate: "01/08/2025",
+      color: "bg-blue-500",
+      showInTimeline: 1, 
+      category: "Engine",
+    },
+    {
+      id: 20,
+      name: "ALI - Conexão",
+      progress: 100,
+      status: "completed",
+      startDate: "01/12/2024",
+      endDate: "24/03/2025",
+      color: "bg-blue-500",
+      showInTimeline: 3, 
+      category: "Conexão",
+    },
+    {
+      id: 21,
+      name: "Automação SPED",
+      progress: 100,
+      status: "completed",
+      startDate: "18/10/2024",
+      endDate: "28/11/2024",
+      color: "bg-blue-500",
+      showInTimeline: 3, 
+      category: "Fiscal",
+    },
+    {
+      id: 22,
+      name: "Automação GNRE",
+      progress: 100,
+      status: "completed",
+      startDate: "07/11/2024",
+      endDate: "13/03/2025",
+      color: "bg-blue-500",
+      showInTimeline: 3, 
+      category: "Fiscal",
+    },
+    {
+      id: 23,
+      name: "Automação NFF",
+      progress: 100,
+      status: "completed",
+      startDate: "01/03/2025",
+      endDate: "01/04/2025",
+      color: "bg-blue-500",
+      showInTimeline: 3, 
+      category: "Fiscal",
+    },
+    {
+      id: 24,
+      name: "Roleta Promocional",
+      progress: 100,
+      status: "completed",
+      startDate: "14/01/2025",
+      endDate: "15/03/2025",
+      color: "bg-blue-500",
+      showInTimeline: 3, 
+      category: "Roleta",
+    },
+    {
+      id: 25,
+      name: "Updates SQL",
+      progress: 100,
+      status: "completed",
+      startDate: "18/10/2024",
+      endDate: "15/01/2025",
+      color: "bg-blue-500",
+      showInTimeline: 3, 
+      category: "Retaguarda",
+    },
+    {
+      id: 26,
+      name: "Automação Cálculo ST",
+      progress: 100,
+      status: "completed",
+      startDate: "07/11/2024",
+      endDate: "20/12/2024",
+      color: "bg-blue-500",
+      showInTimeline: 3, 
+      category: "Fiscal",
     },
   ]
 
-
   const advances = [
-    "Testes na API Venda Mercantil quase finalizados",
-    "Piloto da Engine com erros reduzidos",
-    "Rápido avanço no Hub SSO",
-    "Possíveis causas da lentidão na conciliação identificadas"
+    "Engine funcionando em quase 200 lojas",
   ]
 
   const attentionPoints = [
-    "Problemas pontuais surgindo no Piloto da Engine",
-    "Conciliação lenta e reprocessamento travado",
-    "Versionamento do InVoicy na Engine"
+    
   ]
 
   const futureOpportunities = [
@@ -204,14 +321,51 @@ export default function Component() {
   ]
 
 
+  const sortedProjects = projects.sort((a, b) => {
+    const categoryCompare = a.category.localeCompare(b.category);
+    if (categoryCompare !== 0) return categoryCompare;
+
+    const [da, ma, ya] = a.startDate.split("/").map(Number);
+    const [db, mb, yb] = b.startDate.split("/").map(Number);
+
+    return ya - yb || ma - mb || da - db;
+  });
+
+
   //  projetos para o cronograma (showInTimeline: 1 ou 2)
-  const timelineProjects = projects.filter((project) => project.showInTimeline === 1 || project.showInTimeline === 2)
+  const timelineProjects = sortedProjects.filter((project) => project.showInTimeline === 1 || project.showInTimeline === 2)
 
   //  projetos para a lista (showInTimeline: 1 ou 3) 
   const projectsInProgress = projects.filter(
     (project) => (project.showInTimeline === 1 || project.showInTimeline === 3) && project.status !== "completed",
   )
 
+  const completedProjects = projects.filter((project) => project.status === "completed")
+
+  // Agrupar projetos 
+  const groupedProjectsInProgress = projectsInProgress.reduce(
+    (acc, project) => {
+      const category = project.category || "Outros"
+      if (!acc[category]) {
+        acc[category] = []
+      }
+      acc[category].push(project)
+      return acc
+    },
+    {} as Record<string, typeof projects>,
+  )
+
+  const groupedCompletedProjects = completedProjects.reduce(
+    (acc, project) => {
+      const category = project.category || "Outros"
+      if (!acc[category]) {
+        acc[category] = []
+      }
+      acc[category].push(project)
+      return acc
+    },
+    {} as Record<string, typeof projects>,
+  )
 
   // range dinâmico do gráfico de Gantt
   const calculateGanttRange = () => {
@@ -236,7 +390,7 @@ export default function Component() {
     const latestEnd = new Date(Math.max(...endDates.map((d) => d.getTime())))
 
     const ganttStart = new Date(earliestStart.getFullYear(), earliestStart.getMonth() - 1, 1)
-    const ganttEnd = new Date(latestEnd.getFullYear(), latestEnd.getMonth() + 1, 0) 
+    const ganttEnd = new Date(latestEnd.getFullYear(), latestEnd.getMonth() + 1, 0) // último dia do mês
 
     return { ganttStart, ganttEnd }
   }
@@ -264,6 +418,9 @@ export default function Component() {
 
   const calculateTodayPosition = () => {
     const today = new Date()
+    //alterar data
+    today.setDate(today.getDate() - 1);
+
     const { ganttStart, ganttEnd } = calculateGanttRange()
 
     const totalDays = (ganttEnd.getTime() - ganttStart.getTime()) / (1000 * 60 * 60 * 24)
@@ -284,6 +441,33 @@ export default function Component() {
     }
 
     return months
+  }
+
+  // Função para obter o texto do badge baseado no showInTimeline
+  const getTimelineBadgeText = (showInTimeline: number) => {
+    switch (showInTimeline) {
+      case 1:
+        return "Ambos"
+      case 2:
+        return "Só cronograma"
+      case 3:
+        return "Só lista"
+      default:
+        return ""
+    }
+  }
+
+  const getTimelineBadgeColor = (showInTimeline: number) => {
+    switch (showInTimeline) {
+      case 1:
+        return "bg-green-100 text-green-800 border-green-200"
+      case 2:
+        return "bg-blue-100 text-blue-800 border-blue-200"
+      case 3:
+        return "bg-purple-100 text-purple-800 border-purple-200"
+      default:
+        return "bg-gray-100 text-gray-800 border-gray-200"
+    }
   }
 
   const todayPosition = calculateTodayPosition()
@@ -331,6 +515,94 @@ export default function Component() {
         return "Pendente"
     }
   }
+
+  const getCategoryColor = (category: string) => {
+    const colors: Record<string, string> = {
+      Cartões: "bg-blue-100 text-blue-800 border-blue-200",
+      VAR: "bg-purple-100 text-purple-800 border-purple-200",
+      Automação: "bg-green-100 text-green-800 border-green-200",
+      Fiscal: "bg-yellow-100 text-yellow-800 border-yellow-200",
+      Conciliação: "bg-cyan-100 text-cyan-800 border-cyan-200",
+      Financeiro: "bg-indigo-100 text-indigo-800 border-indigo-200",
+    }
+    return colors[category] || "bg-gray-100 text-gray-800 border-gray-200"
+  }
+
+  // Componente para renderizar um projeto individual
+  const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => (
+    <div className="space-y-2 p-3 bg-white rounded-lg border border-slate-200">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="text-sm font-medium text-slate-700">{project.name}</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <Badge variant="secondary" className={`${getStatusColor(project.status)} text-white text-xs`}>
+            {getStatusText(project.status)}
+          </Badge>
+          <span className="text-sm font-bold text-slate-800">{project.progress}%</span>
+        </div>
+      </div>
+      <Progress value={project.progress} className="h-2" />
+      <div className="flex items-center gap-4 text-xs text-slate-500">
+        <span>Início: {project.startDate}</span>
+        <span>Entrega: {project.endDate}</span>
+      </div>
+    </div>
+  )
+
+  // Componente para renderizar um projeto concluído individual
+  const CompletedProjectCard = ({ project }: { project: (typeof projects)[0] }) => (
+    <div className="space-y-2 p-3 bg-green-50 rounded-lg border border-green-200">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <CheckCircle className="h-4 w-4 text-green-600" />
+          <span className="text-sm font-medium text-green-800">{project.name}</span>
+        </div>
+        <Badge className="bg-green-500 text-white text-xs">100% Concluído</Badge>
+      </div>
+      <div className="flex items-center gap-4 text-xs text-green-600">
+        <span>Início: {project.startDate}</span>
+        <span>Entrega: {project.endDate}</span>
+      </div>
+    </div>
+  )
+
+  // Componente simplificado para projeto único em andamento
+  const SingleProjectCard = ({ project }: { project: (typeof projects)[0] }) => (
+    <div className="space-y-2 p-3 bg-white rounded-lg border border-slate-200">
+      <div className="flex items-center justify-between">
+        <span className="text-sm font-medium text-slate-700">{project.name}</span>
+        <div className="flex items-center gap-2">
+          <Badge variant="secondary" className={`${getStatusColor(project.status)} text-white text-xs`}>
+            {getStatusText(project.status)}
+          </Badge>
+          <span className="text-sm font-bold text-slate-800">{project.progress}%</span>
+        </div>
+      </div>
+      <Progress value={project.progress} className="h-2" />
+      <div className="flex items-center gap-4 text-xs text-slate-500">
+        <span>Início: {project.startDate}</span>
+        <span>Entrega: {project.endDate}</span>
+      </div>
+    </div>
+  )
+
+  // Componente simplificado para projeto único concluído
+  const SingleCompletedProjectCard = ({ project }: { project: (typeof projects)[0] }) => (
+    <div className="space-y-2 p-3 bg-green-50 rounded-lg border border-green-200">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <CheckCircle className="h-4 w-4 text-green-600" />
+          <span className="text-sm font-medium text-green-800">{project.name}</span>
+        </div>
+        <Badge className="bg-green-500 text-white text-xs">100% Concluído</Badge>
+      </div>
+      <div className="flex items-center gap-4 text-xs text-green-600">
+        <span>Início: {project.startDate}</span>
+        <span>Entrega: {project.endDate}</span>
+      </div>
+    </div>
+  )
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6">
@@ -387,6 +659,11 @@ export default function Component() {
                       <div className="col-span-3 text-sm font-medium text-slate-700 truncate">
                         <div className="flex flex-col gap-1">
                           <span>{item.name}</span>
+                          <div className="flex gap-1 flex-wrap">
+                            <Badge variant="outline" className={`text-xs w-fit ${getCategoryColor(item.category)}`}>
+                              {item.category}
+                            </Badge>
+                          </div>
                         </div>
                       </div>
                       <div className="col-span-6 relative h-8 bg-slate-100 rounded-lg overflow-hidden">
@@ -460,6 +737,7 @@ export default function Component() {
           </Card>
 
           {/* Attention Points and Advances */}
+        
           <div className="space-y-6">
             <Card className="shadow-lg border-0 bg-white/80 backdrop-blur">
               <CardHeader className="pb-4">
@@ -497,9 +775,9 @@ export default function Component() {
         </div>
 
         {/* Bottom Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Projects in Progress */}
-          <Card className="shadow-lg border-0 bg-white/80 backdrop-blur">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Projects in Progress with Conditional Accordions */}
+          <Card className="lg:col-span-2 shadow-lg border-0 bg-white/80 backdrop-blur">
             <CardHeader className="pb-4">
               <CardTitle className="flex items-center gap-2 text-slate-800">
                 <TrendingUp className="h-5 w-5 text-blue-600" />
@@ -510,43 +788,116 @@ export default function Component() {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              {projectsInProgress.map((project) => (
-                <div key={project.id} className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium text-slate-700">{project.name}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Badge variant="secondary" className={`${getStatusColor(project.status)} text-white text-xs`}>
-                        {getStatusText(project.status)}
-                      </Badge>
-                      <span className="text-sm font-bold text-slate-800">{project.progress}%</span>
-                    </div>
+              {Object.entries(groupedProjectsInProgress).map(([category, categoryProjects]) => {
+                // Se a categoria tem apenas 1 projeto, exibe diretamente sem header
+                if (categoryProjects.length === 1) {
+                  const project = categoryProjects[0]
+                  return <SingleProjectCard key={category} project={project} />
+                }
+
+                // Se a categoria tem mais de 1 projeto, usa sanfona
+                return (
+                  <div key={category} className="space-y-2">
+                    <button
+                      onClick={() => toggleSection(category, false)}
+                      className="flex items-center justify-between w-full p-3 bg-slate-50 hover:bg-slate-100 rounded-lg transition-colors group"
+                    >
+                      <div className="flex items-center gap-3">
+                        <Badge variant="outline" className={`${getCategoryColor(category)} font-medium`}>
+                          {category}
+                        </Badge>
+                        <span className="text-sm font-medium text-slate-700">{categoryProjects.length} projetos</span>
+                      </div>
+                      <ChevronDown
+                        className={`h-4 w-4 text-slate-500 transition-transform ${
+                          openSections[category] ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {openSections[category] && (
+                      <div className="space-y-3 pl-4 animate-in slide-in-from-top-2 duration-200">
+                        {categoryProjects.map((project) => (
+                          <ProjectCard key={project.id} project={project} />
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  <Progress value={project.progress} className="h-2" />
-                </div>
-              ))}
+                )
+              })}
             </CardContent>
           </Card>
 
-          {/* Future Opportunities */}
+          {/* Completed Projects with Conditional Accordions */}
           <Card className="shadow-lg border-0 bg-white/80 backdrop-blur">
             <CardHeader className="pb-4">
               <CardTitle className="flex items-center gap-2 text-slate-800">
-                <Lightbulb className="h-5 w-5 text-green-600" />
-                Oportunidades futuras
+                <CheckCircle className="h-5 w-5 text-green-600" />
+                Projetos Concluídos
+                <Badge variant="secondary" className="ml-2 text-xs bg-green-100 text-green-800">
+                  {completedProjects.length} projetos
+                </Badge>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
+              {Object.entries(groupedCompletedProjects).map(([category, categoryProjects]) => {
+                // Se a categoria tem apenas 1 projeto, exibe diretamente sem header
+                if (categoryProjects.length === 1) {
+                  const project = categoryProjects[0]
+                  return <SingleCompletedProjectCard key={category} project={project} />
+                }
+
+                // Se a categoria tem mais de 1 projeto, usa sanfona
+                return (
+                  <div key={category} className="space-y-2">
+                    <button
+                      onClick={() => toggleSection(category, true)}
+                      className="flex items-center justify-between w-full p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors group"
+                    >
+                      <div className="flex items-center gap-3">
+                        <Badge variant="outline" className={`${getCategoryColor(category)} font-medium`}>
+                          {category}
+                        </Badge>
+                        <span className="text-sm font-medium text-green-700">{categoryProjects.length} projetos</span>
+                      </div>
+                      <ChevronDown
+                        className={`h-4 w-4 text-green-500 transition-transform ${
+                          openCompletedSections[category] ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {openCompletedSections[category] && (
+                      <div className="space-y-3 pl-4 animate-in slide-in-from-top-2 duration-200">
+                        {categoryProjects.map((project) => (
+                          <CompletedProjectCard key={project.id} project={project} />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Future Opportunities */}
+        <Card className="shadow-lg border-0 bg-white/80 backdrop-blur">
+          <CardHeader className="pb-4">
+            <CardTitle className="flex items-center gap-2 text-slate-800">
+              <Lightbulb className="h-5 w-5 text-green-600" />
+              Oportunidades futuras
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {futureOpportunities.map((opportunity, index) => (
                 <div key={index} className="space-y-2 p-4 bg-green-50 rounded-lg border border-green-200">
                   <h4 className="font-semibold text-green-800">{opportunity.title}</h4>
                   <p className="text-sm text-green-700 leading-relaxed">{opportunity.description}</p>
                 </div>
               ))}
-            </CardContent>
-          </Card>
-        </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   )
