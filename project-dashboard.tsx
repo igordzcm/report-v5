@@ -341,8 +341,8 @@ export default function Component() {
 
   const calculateTodayPosition = () => {
     const today = new Date()
-    //transformando em sexta 15/07
-    today.setDate(today.getDate() - 3);
+    //alterar data
+    //today.setDate(today.getDate() - 7);
 
     const { ganttStart, ganttEnd } = calculateGanttRange()
 
