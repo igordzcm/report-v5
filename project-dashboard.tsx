@@ -41,48 +41,49 @@ export default function Component() {
     },
     {
       id: 2,
-      name: "Cartões Normalizados",
-      progress: 100,
-      status: "completed",
-      startDate: "01/04/2025",
-      endDate: "27/06/2025",
+      name: "RPA Crédito",
+      progress: 86,
+      status: "active",
+      startDate: "14/05/2025",
+      endDate: "29/08/2025",
+      color: "bg-cyan-500",
+      showInTimeline: 2, 
+      category: "RPA",
+    },
+    {
+      id: 2,
+      name: "RPA CRM",
+      progress: 0,
+      status: "future",
+      startDate: "",
+      endDate: "",
       color: "bg-cyan-500",
       showInTimeline: 3, 
-      category: "Cartões",
+      category: "RPA",
     },
     {
-      id: 3,
-      name: "Cartões Limites",
-      progress: 85,
-      status: "active",
-      startDate: "22/07/2025",
-      endDate: "29/08/2025",
-      color: "bg-blue-600",
-      showInTimeline: 2,
-      category: "Cartões",
+      id: 2,
+      name: "RPA Cobrança",
+      progress: 0,
+      status: "future",
+      startDate: "",
+      endDate: "",
+      color: "bg-cyan-500",
+      showInTimeline: 3, 
+      category: "RPA",
     },
     {
-      id: 4,
-      name: "Cartões Blacklist",
-      progress: 100,
-      status: "test",
-      startDate: "30/06/2025",
-      endDate: "08/08/2025",
-      color: "bg-blue-700",
-      showInTimeline: 3,
-      category: "Cartões",
+      id: 2,
+      name: "RPA Produtos Financeiros",
+      progress: 0,
+      status: "future",
+      startDate: "",
+      endDate: "",
+      color: "bg-cyan-500",
+      showInTimeline: 3, 
+      category: "RPA",
     },
-    {
-      id: 5,
-      name: "Cartões Pré aprovados",
-      progress: 60,
-      status: "active",
-      startDate: "22/07/2025",
-      endDate: "29/08/2025",
-      color: "bg-indigo-500",
-      showInTimeline: 2, 
-      category: "Cartões",
-    },
+  
     {
       id: 6,
       name: "Pacote 1 de melhorias conciliação",
@@ -141,10 +142,10 @@ export default function Component() {
     {
       id: 11,
       name: "Automação de testes",
-      progress: 92,
+      progress: 90,
       status: "active",
       startDate: "23/06/2025",
-      endDate: "04/08/2025",
+      endDate: "29/08/2025",
       color: "bg-blue-800",
       showInTimeline: 2, 
       category: "Automação",
@@ -317,10 +318,10 @@ export default function Component() {
     {
       id: 29,
       name: "Rosana",
-      progress: 15,
+      progress: 33,
       status: "active",
       startDate: "04/08/2025",
-      endDate: "23/10/2025",
+      endDate: "05/09/2025",
       color: "bg-green-500",
       showInTimeline: 2, 
       category: "VAR",
@@ -518,6 +519,8 @@ export default function Component() {
         return "bg-purple-500"
       case "pilot":
         return "bg-yellow-500"
+      case "future":
+        return "bg-yellow-500"
       case "block":
         return "bg-red-500"
       case "test":
@@ -543,6 +546,8 @@ export default function Component() {
         return "Bloqueado"
       case "test":
         return "Em teste"
+      case "future":
+        return "Futuro"
       default:
         return "Pendente"
     }
@@ -550,7 +555,7 @@ export default function Component() {
 
   const getCategoryColor = (category: string) => {
     const colors: Record<string, string> = {
-      Cartões: "bg-blue-100 text-blue-800 border-blue-200",
+      RPA: "bg-blue-100 text-blue-800 border-blue-200",
       VAR: "bg-purple-100 text-purple-800 border-purple-200",
       Automação: "bg-green-100 text-green-800 border-green-200",
       Fiscal: "bg-yellow-100 text-yellow-800 border-yellow-200",
