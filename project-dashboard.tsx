@@ -53,34 +53,34 @@ export default function Component() {
     {
       id: 3,
       name: "Cartões Limites",
-      progress: 60,
+      progress: 85,
       status: "active",
       startDate: "22/07/2025",
       endDate: "29/08/2025",
       color: "bg-blue-600",
-      showInTimeline: 1,
+      showInTimeline: 2,
       category: "Cartões",
     },
     {
       id: 4,
       name: "Cartões Blacklist",
-      progress: 90,
-      status: "active",
+      progress: 100,
+      status: "test",
       startDate: "30/06/2025",
       endDate: "08/08/2025",
       color: "bg-blue-700",
-      showInTimeline: 1,
+      showInTimeline: 3,
       category: "Cartões",
     },
     {
       id: 5,
       name: "Cartões Pré aprovados",
-      progress: 50,
+      progress: 60,
       status: "active",
       startDate: "22/07/2025",
       endDate: "29/08/2025",
       color: "bg-indigo-500",
-      showInTimeline: 1, 
+      showInTimeline: 2, 
       category: "Cartões",
     },
     {
@@ -141,34 +141,34 @@ export default function Component() {
     {
       id: 11,
       name: "Automação de testes",
-      progress: 77,
+      progress: 92,
       status: "active",
       startDate: "23/06/2025",
       endDate: "04/08/2025",
       color: "bg-blue-800",
-      showInTimeline: 1, 
+      showInTimeline: 2, 
       category: "Automação",
     },
     {
       id: 12,
       name: "Tesouraria",
-      progress: 80,
-      status: "active",
+      progress: 95,
+      status: "block",
       startDate: "01/07/2025",
       endDate: "13/08/2025",
       color: "bg-blue-800",
-      showInTimeline: 1, 
+      showInTimeline: 3, 
       category: "Tesouraria",
     },
     {
       id: 13,
       name: "MFA",
-      progress: 64,
+      progress: 73,
       status: "active",
       startDate: "01/07/2025",
       endDate: "19/09/2025",
       color: "bg-blue-800",
-      showInTimeline: 1, 
+      showInTimeline: 2, 
       category: "MFA",
     },
     {
@@ -190,7 +190,7 @@ export default function Component() {
       startDate: "21/07/2025",
       endDate: "08/08/2025",
       color: "bg-blue-800",
-      showInTimeline: 1,
+      showInTimeline: 3,
       category: "VAR",
     },
     {
@@ -292,13 +292,46 @@ export default function Component() {
       showInTimeline: 3, 
       category: "Fiscal",
     },
+    {
+      id: 27,
+      name: "Portal da Roleta",
+      progress: 23,
+      status: "active",
+      startDate: "07/08/2025",
+      endDate: "22/09/2025",
+      color: "bg-blue-500",
+      showInTimeline: 2, 
+      category: "Roleta",
+    },
+    {
+      id: 28,
+      name: "Motor de Descontos",
+      progress: 5,
+      status: "active",
+      startDate: "13/08/2025",
+      endDate: "08/12/2025",
+      color: "bg-blue-500",
+      showInTimeline: 2, 
+      category: "VAR",
+    },
+    {
+      id: 29,
+      name: "Rosana",
+      progress: 15,
+      status: "active",
+      startDate: "04/08/2025",
+      endDate: "23/10/2025",
+      color: "bg-green-500",
+      showInTimeline: 2, 
+      category: "VAR",
+    },
   ]
 
   const advances = [
   ]
 
   const attentionPoints = [
-    
+
   ]
 
   const futureOpportunities = [
@@ -418,7 +451,7 @@ export default function Component() {
   const calculateTodayPosition = () => {
     const today = new Date()
     //alterar data
-    today.setDate(today.getDate() - 1);
+    today.setDate(today.getDate() - 3);
 
     const { ganttStart, ganttEnd } = calculateGanttRange()
 
@@ -523,6 +556,9 @@ export default function Component() {
       Fiscal: "bg-yellow-100 text-yellow-800 border-yellow-200",
       Conciliação: "bg-cyan-100 text-cyan-800 border-cyan-200",
       Financeiro: "bg-indigo-100 text-indigo-800 border-indigo-200",
+      MFA: "bg-green-100 text-green-800 border-green-200",
+      Roleta: "bg-yellow-300 text-yellow-800 border-yellow-500",
+      Tesouraria: "bg-cyan-200 text-cyan-800 border-cyan-300",
     }
     return colors[category] || "bg-gray-100 text-gray-800 border-gray-200"
   }
