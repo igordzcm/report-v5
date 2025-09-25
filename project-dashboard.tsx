@@ -40,29 +40,40 @@ export default function Component() {
       category: "Engine",
     },
     {
-      id: 2,
-      name: "RPA Crédito",
-      progress: 86,
-      status: "active",
-      startDate: "14/05/2025",
-      endDate: "29/08/2025",
-      color: "bg-cyan-500",
-      showInTimeline: 2, 
-      category: "RPA",
+      id: 111,
+      name: "Engine Fiscal - webhook",
+      progress: 100,
+      status: "completed",
+      startDate: "01/04/2025",
+      endDate: "30/06/2025",
+      color: "bg-blue-500",
+      showInTimeline: 3, 
+      category: "Engine",
     },
     {
       id: 2,
-      name: "RPA CRM",
-      progress: 0,
-      status: "future",
-      startDate: "",
-      endDate: "",
+      name: "RPA Crédito",
+      progress: 100,
+      status: "completed",
+      startDate: "14/05/2025",
+      endDate: "29/08/2025",
       color: "bg-cyan-500",
       showInTimeline: 3, 
       category: "RPA",
     },
     {
       id: 2,
+      name: "RPA CRM",
+      progress: 25,
+      status: "active",
+      startDate: "15/09/2025",
+      endDate: "13/10/2025",
+      color: "bg-blue-400",
+      showInTimeline: 2, 
+      category: "RPA",
+    },
+    {
+      id: 3,
       name: "RPA Cobrança",
       progress: 0,
       status: "future",
@@ -73,7 +84,7 @@ export default function Component() {
       category: "RPA",
     },
     {
-      id: 2,
+      id: 4,
       name: "RPA Produtos Financeiros",
       progress: 0,
       status: "future",
@@ -93,7 +104,7 @@ export default function Component() {
       endDate: "17/07/2025",
       color: "bg-cyan-600",
       showInTimeline: 3, 
-      category: "Conciliação",
+      category: "Financeiro",
     },
     {
       id: 7,
@@ -142,19 +153,19 @@ export default function Component() {
     {
       id: 11,
       name: "Automação de testes",
-      progress: 90,
-      status: "active",
+      progress: 100,
+      status: "completed",
       startDate: "23/06/2025",
-      endDate: "29/08/2025",
+      endDate: "08/09/2025",
       color: "bg-blue-800",
-      showInTimeline: 2, 
+      showInTimeline: 3, 
       category: "Automação",
     },
     {
       id: 12,
       name: "Tesouraria",
-      progress: 95,
-      status: "block",
+      progress: 100,
+      status: "test",
       startDate: "01/07/2025",
       endDate: "13/08/2025",
       color: "bg-blue-800",
@@ -164,10 +175,10 @@ export default function Component() {
     {
       id: 13,
       name: "MFA",
-      progress: 73,
+      progress: 93,
       status: "active",
       startDate: "01/07/2025",
-      endDate: "19/09/2025",
+      endDate: "30/09/2025",
       color: "bg-blue-800",
       showInTimeline: 2, 
       category: "MFA",
@@ -187,7 +198,7 @@ export default function Component() {
       id: 17,
       name: "Sabadão Mobile",
       progress: 100,
-      status: "test",
+      status: "completed",
       startDate: "21/07/2025",
       endDate: "08/08/2025",
       color: "bg-blue-800",
@@ -209,7 +220,7 @@ export default function Component() {
       id: 19,
       name: "Devolução - Engine Fiscal",
       progress: 100,
-      status: "test",
+      status: "completed",
       startDate: "15/07/2025",
       endDate: "01/08/2025",
       color: "bg-blue-500",
@@ -280,7 +291,7 @@ export default function Component() {
       endDate: "15/01/2025",
       color: "bg-blue-500",
       showInTimeline: 3, 
-      category: "Retaguarda",
+      category: "Automação",
     },
     {
       id: 26,
@@ -296,35 +307,90 @@ export default function Component() {
     {
       id: 27,
       name: "Portal da Roleta",
-      progress: 23,
-      status: "active",
+      progress: 100,
+      status: "test",
       startDate: "07/08/2025",
       endDate: "22/09/2025",
       color: "bg-blue-500",
-      showInTimeline: 2, 
+      showInTimeline: 1, 
       category: "Roleta",
     },
+    // {
+    //   id: 28,
+    //   name: "Motor de Descontos",
+    //   progress: 17,
+    //   status: "active",
+    //   startDate: "13/08/2025",
+    //   endDate: "08/12/2025",
+    //   color: "bg-blue-500",
+    //   showInTimeline: 2, 
+    //   category: "VAR",
+    // },
     {
-      id: 28,
-      name: "Motor de Descontos",
-      progress: 5,
-      status: "active",
-      startDate: "13/08/2025",
-      endDate: "08/12/2025",
+      id: 51,
+      name: "Sofia - Triagem",
+      progress: 100,
+      status: "test",
+      startDate: "04/08/2025",
+      endDate: "11/08/2025",
       color: "bg-blue-500",
-      showInTimeline: 2, 
-      category: "VAR",
+      showInTimeline: 3, 
+      category: "Rosana",
     },
     {
-      id: 29,
-      name: "Rosana",
-      progress: 33,
-      status: "active",
-      startDate: "04/08/2025",
+      id: 52,
+      name: "Marcos - Venda Mercantil",
+      progress: 100,
+      status: "test",
+      startDate: "11/08/2025",
+      endDate: "25/08/2025",
+      color: "bg-blue-500",
+      showInTimeline: 3, 
+      category: "Rosana",
+    },
+    {
+      id: 53,
+      name: "Camila - Cartão Avenida",
+      progress: 100,
+      status: "test",
+      startDate: "11/08/2025",
+      endDate: "25/08/2025",
+      color: "bg-blue-500",
+      showInTimeline: 3, 
+      category: "Rosana",
+    },
+    {
+      id: 54,
+      name: "Thiago - TudoAV",
+      progress: 100,
+      status: "test",
+      startDate: "25/08/2025",
+      endDate: "01/09/2025",
+      color: "bg-blue-500",
+      showInTimeline: 3, 
+      category: "Rosana",
+    },
+    {
+      id: 55,
+      name: "Fin - Produtos Financeiros",
+      progress: 100,
+      status: "test",
+      startDate: "25/08/2025",
+      endDate: "01/09/2025",
+      color: "bg-blue-500",
+      showInTimeline: 3, 
+      category: "Rosana",
+    },
+    {
+      id: 56,
+      name: "Olga - Operacional",
+      progress: 100,
+      status: "test",
+      startDate: "01/09/2025",
       endDate: "05/09/2025",
-      color: "bg-green-500",
-      showInTimeline: 2, 
-      category: "VAR",
+      color: "bg-red-500",
+      showInTimeline: 3, 
+      category: "Rosana",
     },
   ]
 
@@ -452,7 +518,7 @@ export default function Component() {
   const calculateTodayPosition = () => {
     const today = new Date()
     //alterar data
-    today.setDate(today.getDate() - 3);
+    //today.setDate(today.getDate() - 3);
 
     const { ganttStart, ganttEnd } = calculateGanttRange()
 
@@ -560,6 +626,7 @@ export default function Component() {
       Automação: "bg-green-100 text-green-800 border-green-200",
       Fiscal: "bg-yellow-100 text-yellow-800 border-yellow-200",
       Conciliação: "bg-cyan-100 text-cyan-800 border-cyan-200",
+      Rosana: "bg-purple-100 text-purple-800 border-purple-200",
       Financeiro: "bg-indigo-100 text-indigo-800 border-indigo-200",
       MFA: "bg-green-100 text-green-800 border-green-200",
       Roleta: "bg-yellow-300 text-yellow-800 border-yellow-500",
@@ -568,12 +635,16 @@ export default function Component() {
     return colors[category] || "bg-gray-100 text-gray-800 border-gray-200"
   }
 
+
   // Componente para renderizar um projeto individual
   const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => (
     <div className="space-y-2 p-3 bg-white rounded-lg border border-slate-200">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="text-sm font-medium text-slate-700">{project.name}</span>
+          <Badge variant="outline" className={`text-xs ${getTimelineBadgeColor(project.showInTimeline)}`}>
+            {getTimelineBadgeText(project.showInTimeline)}
+          </Badge>
         </div>
         <div className="flex items-center gap-2">
           <Badge variant="secondary" className={`${getStatusColor(project.status)} text-white text-xs`}>
@@ -653,240 +724,241 @@ export default function Component() {
           <p className="text-slate-600">Acompanhe o progresso e cronograma dos seus projetos</p>
         </div>
 
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Timeline */}
-          <Card className="lg:col-span-2 shadow-lg border-0 bg-white/80 backdrop-blur">
-            <CardHeader className="pb-4">
-              <CardTitle className="flex items-center gap-2 text-slate-800">
-                <Calendar className="h-5 w-5 text-blue-600" />
-                Cronograma de Projetos
-                <Badge variant="secondary" className="ml-2 text-xs">
-                  {timelineProjects.length} projetos
-                </Badge>
-              </CardTitle>
-              <div className="text-xs text-slate-500 mt-1">
-                Período: {(() => {
-                  const { ganttStart, ganttEnd } = calculateGanttRange()
-                  const startMonth = ganttStart.toLocaleDateString("pt-BR", { month: "short", year: "numeric" })
-                  const endMonth = ganttEnd.toLocaleDateString("pt-BR", { month: "short", year: "numeric" })
-                  return `${startMonth} - ${endMonth}`
-                })()}
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {/* Header com meses */}
-                <div className="grid grid-cols-12 gap-2 text-xs font-medium text-slate-600 mb-6 border-b pb-2">
-                  <div className="col-span-3">Projeto</div>
-                  <div className="col-span-6 flex justify-between text-center">
-                    {generateMonthsHeader().map((month, index) => (
-                      <span key={index} className="flex-1">
-                        {month}
-                      </span>
-                    ))}
+        {/* Timeline and Completed Projects */}
+        <div className="flex gap-6 flex-wrap lg:flex-nowrap items-start">
+          {/* Left Column - Timeline and Projects in Progress */}
+          <div className="flex-1 min-w-0 space-y-6">
+            {/* Timeline */}
+            <Card className="shadow-lg border-0 bg-white/80 backdrop-blur">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-slate-800">
+                  <Calendar className="h-5 w-5 text-blue-600" />
+                  Cronograma de Projetos
+                  <Badge variant="secondary" className="ml-2 text-xs">
+                    {timelineProjects.length} projetos
+                  </Badge>
+                </CardTitle>
+                <div className="text-xs text-slate-500 mt-1">
+                  Período: {(() => {
+                    const { ganttStart, ganttEnd } = calculateGanttRange()
+                    const startMonth = ganttStart.toLocaleDateString("pt-BR", { month: "short", year: "numeric" })
+                    const endMonth = ganttEnd.toLocaleDateString("pt-BR", { month: "short", year: "numeric" })
+                    return `${startMonth} - ${endMonth}`
+                  })()}
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {/* Header com meses */}
+                  <div className="grid grid-cols-12 gap-2 text-xs font-medium text-slate-600 mb-6 border-b pb-2">
+                    <div className="col-span-3">Projeto</div>
+                    <div className="col-span-6 flex justify-between text-center">
+                      {generateMonthsHeader().map((month, index) => (
+                        <span key={index} className="flex-1">
+                          {month}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="col-span-3 text-center">Início → Entrega</div>
                   </div>
-                  <div className="col-span-3 text-center">Início → Entrega</div>
+
+                  {timelineProjects.map((item) => {
+                    const position = calculateGanttPosition(item.startDate, item.endDate)
+                    return (
+                      <div
+                        key={item.id}
+                        className="grid grid-cols-12 gap-2 items-center py-3 hover:bg-slate-50 rounded-lg transition-colors group"
+                      >
+                        <div className="col-span-3 text-sm font-medium text-slate-700 truncate">
+                          <div className="flex flex-col gap-1">
+                            <span>{item.name}</span>
+                            <div className="flex gap-1 flex-wrap">
+                              <Badge variant="outline" className={`text-xs w-fit ${getCategoryColor(item.category)}`}>
+                                {item.category}
+                              </Badge>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-span-6 relative h-8 bg-slate-100 rounded-lg overflow-hidden">
+                          {/* Barra do projeto */}
+                          <div
+                            className={`absolute top-1 bottom-1 ${item.color} rounded-md shadow-sm transition-all duration-300 group-hover:shadow-md flex items-center justify-center`}
+                            style={{
+                              left: `${position.left}%`,
+                              width: `${position.width}%`,
+                            }}
+                          >
+                            {/* Indicador de progresso */}
+                            <div
+                              className="absolute left-0 top-0 bottom-0 bg-white/30 rounded-md transition-all duration-500"
+                              style={{ width: `${item.progress}%` }}
+                            />
+                            <span className="text-xs font-medium text-white z-10">{item.progress}%</span>
+                          </div>
+
+                          {/* Linha "hoje" */}
+                          <div
+                            className="absolute top-0 bottom-0 w-0.5 bg-red-500 z-20"
+                            style={{ left: `${todayPosition}%` }}
+                            title={`Hoje: ${todayFormatted}`}
+                          >
+                            <div className="absolute -top-1 -left-1 w-2 h-2 bg-red-500 rounded-full"></div>
+                            <div className="absolute -top-6 -left-8 text-xs font-medium text-red-600 bg-white px-1 rounded shadow-sm border">
+                              Hoje
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-span-3 text-xs text-slate-600 text-center space-y-1">
+                          <div className="flex items-center justify-center gap-1">
+                            <Clock className="h-3 w-3 text-green-600" />
+                            <span className="text-green-600 font-medium">{item.startDate}</span>
+                          </div>
+                          <div className="flex items-center justify-center gap-1">
+                            <Clock className="h-3 w-3 text-blue-600" />
+                            <span className="text-blue-600 font-medium">{item.endDate}</span>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
                 </div>
 
-                {timelineProjects.map((item) => {
-                  const position = calculateGanttPosition(item.startDate, item.endDate)
-                  return (
-                    <div
-                      key={item.id}
-                      className="grid grid-cols-12 gap-2 items-center py-3 hover:bg-slate-50 rounded-lg transition-colors group"
-                    >
-                      <div className="col-span-3 text-sm font-medium text-slate-700 truncate">
-                        <div className="flex flex-col gap-1">
-                          <span>{item.name}</span>
-                          <div className="flex gap-1 flex-wrap">
-                            <Badge variant="outline" className={`text-xs w-fit ${getCategoryColor(item.category)}`}>
-                              {item.category}
-                            </Badge>
-                          </div>
-                        </div>
+                {/* Legenda */}
+                <div className="mt-6 pt-4 border-t border-slate-200">
+                  <div className="flex items-center justify-center gap-6 text-xs text-slate-600">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-green-600 rounded-full"></div>
+                      <span>Data de Início</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                      <span>Data de Entrega</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <span>Hoje ({todayFormatted})</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-3 bg-slate-400 rounded-sm relative overflow-hidden">
+                        <div className="absolute left-0 top-0 bottom-0 w-1/2 bg-white/50 rounded-sm"></div>
                       </div>
-                      <div className="col-span-6 relative h-8 bg-slate-100 rounded-lg overflow-hidden">
-                        {/* Barra do projeto */}
-                        <div
-                          className={`absolute top-1 bottom-1 ${item.color} rounded-md shadow-sm transition-all duration-300 group-hover:shadow-md flex items-center justify-center`}
-                          style={{
-                            left: `${position.left}%`,
-                            width: `${position.width}%`,
-                          }}
-                        >
-                          {/* Indicador de progresso */}
-                          <div
-                            className="absolute left-0 top-0 bottom-0 bg-white/30 rounded-md transition-all duration-500"
-                            style={{ width: `${item.progress}%` }}
-                          />
-                          <span className="text-xs font-medium text-white z-10">{item.progress}%</span>
-                        </div>
+                      <span>Progresso</span>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-                        {/* Linha "hoje" */}
-                        <div
-                          className="absolute top-0 bottom-0 w-0.5 bg-red-500 z-20"
-                          style={{ left: `${todayPosition}%` }}
-                          title={`Hoje: ${todayFormatted}`}
+            {/* Projects in Progress - directly below timeline */}
+            <Card className="shadow-lg border-0 bg-white/80 backdrop-blur">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-slate-800">
+                  <TrendingUp className="h-5 w-5 text-blue-600" />
+                  Projetos em andamento
+                  <Badge variant="secondary" className="ml-2 text-xs">
+                    {projectsInProgress.length} projetos
+                  </Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
+                  {Object.entries(groupedProjectsInProgress).map(([category, categoryProjects]) => {
+                    // Se a categoria tem apenas 1 projeto, exibe diretamente sem header
+                    if (categoryProjects.length === 1) {
+                      const project = categoryProjects[0]
+                      return <SingleProjectCard key={category} project={project} />
+                    }
+
+                    // Se a categoria tem mais de 1 projeto, usa sanfona
+                    return (
+                      <div key={category} className="space-y-2">
+                        <button
+                          onClick={() => toggleSection(category, false)}
+                          className="flex items-center justify-between w-full p-3 bg-slate-50 hover:bg-slate-100 rounded-lg transition-colors group"
                         >
-                          <div className="absolute -top-1 -left-1 w-2 h-2 bg-red-500 rounded-full"></div>
-                          <div className="absolute -top-6 -left-8 text-xs font-medium text-red-600 bg-white px-1 rounded shadow-sm border">
-                            Hoje
+                          <div className="flex items-center gap-3">
+                            <Badge variant="outline" className={`${getCategoryColor(category)} font-medium`}>
+                              {category}
+                            </Badge>
+                            <span className="text-sm font-medium text-slate-700">
+                              {categoryProjects.length} projetos
+                            </span>
                           </div>
-                        </div>
+                          <ChevronDown
+                            className={`h-4 w-4 text-slate-500 transition-transform ${
+                              openSections[category] ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                        {openSections[category] && (
+                          <div className="space-y-3 pl-4 animate-in slide-in-from-top-2 duration-200">
+                            {categoryProjects.map((project) => (
+                              <ProjectCard key={project.id} project={project} />
+                            ))}
+                          </div>
+                        )}
                       </div>
-                      <div className="col-span-3 text-xs text-slate-600 text-center space-y-1">
-                        <div className="flex items-center justify-center gap-1">
-                          <Clock className="h-3 w-3 text-green-600" />
-                          <span className="text-green-600 font-medium">{item.startDate}</span>
+                    )
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Right Column - Completed Projects and Attention/Advances */}
+          <div className="w-full lg:w-80 xl:w-96 space-y-6">
+            {/* Completed Projects */}
+            <Card className="shadow-lg border-0 bg-white/80 backdrop-blur">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-slate-800">
+                  <CheckCircle className="h-5 w-5 text-green-600" />
+                  Projetos Concluídos
+                  <Badge variant="secondary" className="ml-2 text-xs bg-green-100 text-green-800">
+                    {completedProjects.length} projetos
+                  </Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {Object.entries(groupedCompletedProjects).map(([category, categoryProjects]) => {
+                  // Se a categoria tem apenas 1 projeto, exibe diretamente sem header
+                  if (categoryProjects.length === 1) {
+                    const project = categoryProjects[0]
+                    return <SingleCompletedProjectCard key={category} project={project} />
+                  }
+
+                  // Se a categoria tem mais de 1 projeto, usa sanfona
+                  return (
+                    <div key={category} className="space-y-2">
+                      <button
+                        onClick={() => toggleSection(category, true)}
+                        className="flex items-center justify-between w-full p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors group"
+                      >
+                        <div className="flex items-center gap-3">
+                          <Badge variant="outline" className={`${getCategoryColor(category)} font-medium`}>
+                            {category}
+                          </Badge>
+                          <span className="text-sm font-medium text-green-700">{categoryProjects.length} projetos</span>
                         </div>
-                        <div className="flex items-center justify-center gap-1">
-                          <Clock className="h-3 w-3 text-blue-600" />
-                          <span className="text-blue-600 font-medium">{item.endDate}</span>
+                        <ChevronDown
+                          className={`h-4 w-4 text-green-500 transition-transform ${
+                            openCompletedSections[category] ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      {openCompletedSections[category] && (
+                        <div className="space-y-3 pl-4 animate-in slide-in-from-top-2 duration-200">
+                          {categoryProjects.map((project) => (
+                            <CompletedProjectCard key={project.id} project={project} />
+                          ))}
                         </div>
-                      </div>
+                      )}
                     </div>
                   )
                 })}
-              </div>
+              </CardContent>
+            </Card>
 
-              {/* Legenda */}
-              <div className="mt-6 pt-4 border-t border-slate-200">
-                <div className="flex items-center justify-center gap-6 text-xs text-slate-600">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-green-600 rounded-full"></div>
-                    <span>Data de Início</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
-                    <span>Data de Entrega</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <span>Hoje ({todayFormatted})</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-3 bg-slate-400 rounded-sm relative overflow-hidden">
-                      <div className="absolute left-0 top-0 bottom-0 w-1/2 bg-white/50 rounded-sm"></div>
-                    </div>
-                    <span>Progresso</span>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Attention Points and Advances */}
-          {/* INVERTIDO PROJETOS TERMINADOS COM AVANÇOS E PONTOS DE ANTEÇÃO */}
-          <Card className="shadow-lg border-0 bg-white/80 backdrop-blur">
-            <CardHeader className="pb-4">
-              <CardTitle className="flex items-center gap-2 text-slate-800">
-                <CheckCircle className="h-5 w-5 text-green-600" />
-                Projetos Concluídos
-                <Badge variant="secondary" className="ml-2 text-xs bg-green-100 text-green-800">
-                  {completedProjects.length} projetos
-                </Badge>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {Object.entries(groupedCompletedProjects).map(([category, categoryProjects]) => {
-                // Se a categoria tem apenas 1 projeto, exibe diretamente sem header
-                if (categoryProjects.length === 1) {
-                  const project = categoryProjects[0]
-                  return <SingleCompletedProjectCard key={category} project={project} />
-                }
-
-                // Se a categoria tem mais de 1 projeto, usa sanfona
-                return (
-                  <div key={category} className="space-y-2">
-                    <button
-                      onClick={() => toggleSection(category, true)}
-                      className="flex items-center justify-between w-full p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors group"
-                    >
-                      <div className="flex items-center gap-3">
-                        <Badge variant="outline" className={`${getCategoryColor(category)} font-medium`}>
-                          {category}
-                        </Badge>
-                        <span className="text-sm font-medium text-green-700">{categoryProjects.length} projetos</span>
-                      </div>
-                      <ChevronDown
-                        className={`h-4 w-4 text-green-500 transition-transform ${
-                          openCompletedSections[category] ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                    {openCompletedSections[category] && (
-                      <div className="space-y-3 pl-4 animate-in slide-in-from-top-2 duration-200">
-                        {categoryProjects.map((project) => (
-                          <CompletedProjectCard key={project.id} project={project} />
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-            </CardContent>
-          </Card>
-          
-        </div>
-
-        {/* Bottom Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Projects in Progress with Conditional Accordions */}
-          <Card className="lg:col-span-2 shadow-lg border-0 bg-white/80 backdrop-blur">
-            <CardHeader className="pb-4">
-              <CardTitle className="flex items-center gap-2 text-slate-800">
-                <TrendingUp className="h-5 w-5 text-blue-600" />
-                Projetos em andamento
-                <Badge variant="secondary" className="ml-2 text-xs">
-                  {projectsInProgress.length} projetos
-                </Badge>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {Object.entries(groupedProjectsInProgress).map(([category, categoryProjects]) => {
-                // Se a categoria tem apenas 1 projeto, exibe diretamente sem header
-                if (categoryProjects.length === 1) {
-                  const project = categoryProjects[0]
-                  return <SingleProjectCard key={category} project={project} />
-                }
-
-                // Se a categoria tem mais de 1 projeto, usa sanfona
-                return (
-                  <div key={category} className="space-y-2">
-                    <button
-                      onClick={() => toggleSection(category, false)}
-                      className="flex items-center justify-between w-full p-3 bg-slate-50 hover:bg-slate-100 rounded-lg transition-colors group"
-                    >
-                      <div className="flex items-center gap-3">
-                        <Badge variant="outline" className={`${getCategoryColor(category)} font-medium`}>
-                          {category}
-                        </Badge>
-                        <span className="text-sm font-medium text-slate-700">{categoryProjects.length} projetos</span>
-                      </div>
-                      <ChevronDown
-                        className={`h-4 w-4 text-slate-500 transition-transform ${
-                          openSections[category] ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                    {openSections[category] && (
-                      <div className="space-y-3 pl-4 animate-in slide-in-from-top-2 duration-200">
-                        {categoryProjects.map((project) => (
-                          <ProjectCard key={project.id} project={project} />
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-            </CardContent>
-          </Card>
-
-          {/* Completed Projects with Conditional Accordions */}
-          {/* INVERTIDO PROJETOS TERMINADOS COM AVANÇOS E PONTOS DE ANTEÇÃO */}
-
-          <div className="space-y-6">
+            {/* Attention Points */}
             <Card className="shadow-lg border-0 bg-white/80 backdrop-blur">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-2 text-slate-800">
@@ -904,6 +976,7 @@ export default function Component() {
               </CardContent>
             </Card>
 
+            {/* Advances */}
             <Card className="shadow-lg border-0 bg-white/80 backdrop-blur">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-2 text-slate-800">
@@ -914,7 +987,8 @@ export default function Component() {
               <CardContent className="space-y-4">
                 {advances.map((advance, index) => (
                   <div key={index} className="space-y-2 p-4 bg-green-50 rounded-lg border border-green-200">
-                    <p className="text-sm text-green-700 leading-relaxed">{advance}</p>
+                    <h4 className="font-semibold text-green-800">{advance.title}</h4>
+                    <p className="text-sm text-green-700 leading-relaxed">{advance.description}</p>
                   </div>
                 ))}
               </CardContent>
