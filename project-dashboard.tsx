@@ -64,7 +64,7 @@ export default function Component() {
     {
       id: 2,
       name: "RPA CRM",
-      progress: 90,
+      progress: 95,
       status: "active",
       startDate: "22/09/2025",
       endDate: "14/11/2025",
@@ -178,7 +178,7 @@ export default function Component() {
       progress: 100,
       status: "completed",
       startDate: "01/07/2025",
-      endDate: "30/09/2025",
+      endDate: "30/10/2025",
       color: "bg-blue-800",
       showInTimeline: 3, 
       category: "MFA",
@@ -399,10 +399,32 @@ export default function Component() {
       status: "active",
       startDate: "07/11/2025",
       endDate: "05/12/2025",
-      color: "bg-red-500",
+      color: "bg-blue-500",
       showInTimeline: 2, 
       category: "ALI",
     },
+    {
+      id: 58,
+      name: "MFA - Primeiro Acesso",
+      progress: 15,
+      status: "active",
+      startDate: "11/11/2025",
+      endDate: "01/12/2025",
+      color: "bg-blue-500",
+      showInTimeline: 2, 
+      category: "MFA",
+    },
+    // { 
+    //   id: 59,
+    //   name: "Automação NFF",
+    //   progress: 100,
+    //   status: "completed",
+    //   startDate: "01/03/2025",
+    //   endDate: "01/04/2025",
+    //   color: "bg-blue-500",
+    //   showInTimeline: 3, 
+    //   category: "RPA",
+    // }
   ]
 
   const advances = [
